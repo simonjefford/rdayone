@@ -1,5 +1,4 @@
-require_relative '../../lib/rdayone'
-require 'rspec'
+require 'spec_helper'
 
 describe Rdayone::Journal do
   describe "loading" do
