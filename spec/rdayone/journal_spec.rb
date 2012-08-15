@@ -20,7 +20,7 @@ describe Rdayone::Journal do
 
     it "uses an entry finder" do
       finder.should_receive(:find).with("some_path")
-      e = subject.entries
+      subject
     end
   end
 
