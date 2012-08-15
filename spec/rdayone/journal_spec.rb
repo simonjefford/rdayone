@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Rdayone::Journal do
   describe "loading" do
     let(:finder) do
-      f = double("finder").as_null_object
+      f = double("finder")
       f.stub(:find) { [double("entry")] }
       f
     end
