@@ -12,5 +12,11 @@ module Rdayone
     end
 
     alias :[] :fetch
+
+    def each
+      (0..@entry_paths.length - 1).each do |index|
+        yield self.fetch(index)
+      end
+    end
   end
 end
