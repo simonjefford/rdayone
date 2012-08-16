@@ -5,6 +5,7 @@ module Rdayone
       @attribute_mappings = {
         text: "Entry Text",
         creation_date: "Creation Date",
+        identifier: "UUID"
       }
     end
 
