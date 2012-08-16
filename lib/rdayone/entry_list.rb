@@ -2,6 +2,8 @@ require 'plist'
 
 module Rdayone
   class EntryList
+    include Enumerable
+
     def initialize(entry_paths)
       @entry_paths = entry_paths
     end
