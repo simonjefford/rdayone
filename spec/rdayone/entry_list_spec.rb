@@ -1,7 +1,5 @@
 require 'spec_helper'
-# e = EntryList.new('/Users/simon/journal/entries/1.doentry', '2.doentry')
-# e[0] is instance of Entry with contents of 1.doentry
-#
+
 describe Rdayone::EntryList do
   subject { Rdayone::EntryList.new(entry_fixture_paths) }
 
