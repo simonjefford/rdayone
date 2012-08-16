@@ -7,9 +7,7 @@ module Rdayone
     end
 
     def [](index)
-      if index > @entry_paths.length
-        throw ArgumentError
-      end
+      throw ArgumentError if index > @entry_paths.length
       @entry_paths[index]
     end
   end
