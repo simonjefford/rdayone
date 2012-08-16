@@ -2,14 +2,8 @@ require 'spec_helper'
 
 describe Rdayone::Entry do
   context "initialisation" do
-    it "takes a Day One entry identifier and returns an entry with that identifier" do
-      entry = Rdayone::Entry.new("abcde")
-      expect(entry.identifier).to eq("abcde")
-    end
-
-    it "takes an optional hash" do
-      entry = Rdayone::Entry.new("abcde", {})
-      expect(entry.identifier).to eq("abcde")
+    it "can occur with no arguments" do
+      entry = Rdayone::Entry.new
     end
   end
 
@@ -18,7 +12,7 @@ describe Rdayone::Entry do
 
     subject do
       hash = { "Creation Date" => creation_date, "Entry Text" => "something cool happened today" }
-      Rdayone::Entry.new("abcde", hash)
+      Rdayone::Entry.new(hash)
     end
 
     it "populates the entry text" do

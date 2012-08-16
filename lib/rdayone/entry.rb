@@ -1,13 +1,10 @@
 module Rdayone
   class Entry
-    attr_reader :identifier
-
-    def initialize(identifier, plist_hash = {})
-      @identifier = identifier
+    def initialize(plist_hash = {})
       @plist_hash = plist_hash
       @attribute_mappings = {
         text: "Entry Text",
-        creation_date: "Creation Date"
+        creation_date: "Creation Date",
       }
     end
 
