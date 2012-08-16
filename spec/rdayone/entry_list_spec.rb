@@ -3,12 +3,6 @@ require 'spec_helper'
 # e[0] is instance of Entry with contents of 1.doentry
 #
 describe Rdayone::EntryList do
-  context "initialisation" do
-    it "takes a list of entry files" do
-      list = Rdayone::EntryList.new(entry_fixture_paths)
-    end
-  end
-
   context "entry fetching" do
     subject { Rdayone::EntryList.new(entry_fixture_paths) }
 
