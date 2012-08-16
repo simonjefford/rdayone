@@ -8,7 +8,7 @@ module Rdayone
 
     def [](index)
       throw ArgumentError if index > @entry_paths.length
-      @entry_paths[index]
+      Rdayone::Entry.new("", Plist::parse_xml(@entry_paths[index]))
     end
   end
 end

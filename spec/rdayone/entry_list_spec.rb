@@ -17,6 +17,11 @@ describe Rdayone::EntryList do
       expect(e).to_not be_nil
     end
 
+    it "returns a populated Entry" do
+      e = subject[0]
+      expect(e.text).to eq("Something cool happened in London")
+    end
+
     it "throws an error if the index is out of range" do
       expect { subject[100] }.to raise_error(ArgumentError)
     end
