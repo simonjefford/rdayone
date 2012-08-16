@@ -6,9 +6,11 @@ module Rdayone
       @entry_paths = entry_paths
     end
 
-    def [](index)
+    def fetch(index)
       raise ArgumentError if index > @entry_paths.length
       Rdayone::Entry.new(Plist::parse_xml(@entry_paths[index]))
     end
+
+    alias :[] :fetch
   end
 end
