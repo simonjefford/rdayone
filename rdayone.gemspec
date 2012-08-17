@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["simon.jefford@gmail.com"]
   gem.description   = %q{A ruby gem for accessing Day One (http://dayoneapp.com/) journals}
   gem.summary       = %q{Access Day One journals from ruby.}
-  gem.homepage      = ""
+  gem.homepage      = "http://github.com/simonjefford/rdayone"
 
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   gem.files         = `git ls-files`.split("\n")
