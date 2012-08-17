@@ -2,6 +2,9 @@
 
 Rdayone is a simple Ruby library for accessing Day One journals.
 
+[![Build Status](https://secure.travis-ci.org/simonjefford/rdayone.png)](http://travis-ci.org/simonjefford/rdayone)
+
+
 ## Installation
 
 Add this line to your application's Gemfile:
