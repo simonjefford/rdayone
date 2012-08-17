@@ -1,6 +1,6 @@
 module Rdayone
   class Finder
-    def find(path)
+    def self.find(path)
     end
   end
 end
