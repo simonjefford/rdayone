@@ -31,4 +31,12 @@ describe Rdayone::EntryList do
       expect(mapresult).to eq(["Something cool happened in London"])
     end
   end
+
+  context "caching" do
+    it "should cache entries for subsequent requests" do
+      list = subject.to_a
+      Plist.stub(:parse_xml).and_raise("Entry was not cached")
+      subject[0]
+    end
+  end
 end
