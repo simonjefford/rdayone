@@ -1,6 +1,6 @@
 # Rdayone
 
-TODO: Write a gem description
+Rdayone is a simple Ruby library for accessing Day One journals.
 
 ## Installation
 
@@ -18,7 +18,16 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+``` ruby
+require "rdayone"
+journal = Rdayone::Journal.new("/path/to/Journal.dayone")
+journal.entries # An Enumerable array like object that contains all your entries
+```
+
+## NOTE
+
+This is a *very* early release. Entries currently contain the entry text
+and date only.
 
 ## Contributing
 
