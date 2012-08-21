@@ -27,7 +27,7 @@ describe Rdayone::Journal do
   describe "finder interaction" do
     it "should default to the provided finder" do
       journal = Rdayone::Journal.new("some_path")
-      expect(journal.finder).to eq(Rdayone::Finder)
+      expect(journal.finder).to be_instance_of(Rdayone::Finder)
     end
   end
 end
