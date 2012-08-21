@@ -1,5 +1,9 @@
 module Rdayone
   class Location
+    attr_reader :plist_hash, :attribute_mappings
+
+    include Rdayone::AttributeMappable
+
     def initialize(plist_hash)
       @plist_hash = plist_hash
       @attribute_mappings = {
@@ -8,15 +12,6 @@ module Rdayone
         place_name: "Place Name",
         locality: "Locality"
       }
-    end
-
-    def method_missing(method, *args)
-      key = @attribute_mappings[method]
-      if key
-        @plist_hash[key]
-      else
-        super
-      end
     end
   end
 end
