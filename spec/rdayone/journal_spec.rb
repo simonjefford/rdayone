@@ -1,10 +1,10 @@
 require 'spec_helper'
 
 describe Rdayone::Journal do
-  describe "loading" do
+  context "loading" do
     let(:finder) do
       f = double("finder")
-      f.stub(:find) { [double("entry")] }
+      f.stub(:find_entries) { [double("entry")] }
       f
     end
 
@@ -19,15 +19,20 @@ describe Rdayone::Journal do
     end
 
     it "uses an entry finder" do
-      finder.should_receive(:find).with("some_path")
+      finder.should_receive(:find_entries)
       subject
     end
   end
 
-  describe "finder interaction" do
+  context "Rdayone::Finder interaction" do
+    subject { Rdayone::Journal.new("some_path") }
+
     it "should default to the provided finder" do
-      journal = Rdayone::Journal.new("some_path")
-      expect(journal.finder).to eq(Rdayone::Finder)
+      expect(subject.finder).to be_instance_of(Rdayone::Finder)
+    end
+
+    it "configures the provided finder with a path" do
+      expect(subject.finder.path).to eq("some_path")
     end
   end
 end

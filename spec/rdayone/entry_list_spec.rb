@@ -1,7 +1,9 @@
 require 'spec_helper'
 
 describe Rdayone::EntryList do
-  subject { Rdayone::EntryList.new(entry_fixture_paths) }
+  let(:finder) { double("finder").as_null_object }
+
+  subject { Rdayone::EntryList.new(entry_fixture_paths, finder) }
 
   context "entry fetching" do
     it "returns the nth entry when used like an array" do
@@ -16,6 +18,12 @@ describe Rdayone::EntryList do
 
     it "throws an error if the index is out of range" do
       expect { subject[100] }.to raise_error(ArgumentError)
+    end
+
+    it "uses the finder to pass in the full path to the photo" do
+      finder.stub(:uuid_from_path).and_return("uuid")
+      finder.should_receive(:find_photo_for).with("uuid")
+      expect(subject[0].photo).to_not be_nil
     end
   end
 

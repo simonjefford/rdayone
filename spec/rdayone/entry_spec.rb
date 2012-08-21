@@ -5,6 +5,19 @@ describe Rdayone::Entry do
     it "can occur with no arguments" do
       entry = Rdayone::Entry.new
     end
+
+    context "with photo" do
+      let(:photo) { double("photo") }
+
+      it "can take an optional photo argument" do
+        entry = Rdayone::Entry.new({}, photo)
+      end
+
+      it "exposes that photo via an attribute" do
+        entry = Rdayone::Entry.new({}, photo)
+        expect(entry.photo).to eq(photo)
+      end
+    end
   end
 
   context "basic parsing" do

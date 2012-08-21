@@ -1,7 +1,10 @@
 module Rdayone
   class Entry
-    def initialize(plist_hash = {})
+    attr_reader :photo
+
+    def initialize(plist_hash = {}, photo = nil)
       @plist_hash = plist_hash
+      @photo = photo
       @attribute_mappings = {
         text: "Entry Text",
         creation_date: "Creation Date",
