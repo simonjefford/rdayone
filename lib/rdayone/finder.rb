@@ -1,5 +1,7 @@
 module Rdayone
   class Finder
+    attr_reader :path
+
     def initialize(path)
       @path = path
     end
