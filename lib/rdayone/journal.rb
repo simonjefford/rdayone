@@ -5,7 +5,7 @@ module Rdayone
     def initialize(file_path, finder = Rdayone::Finder)
       @file_path = file_path
       @finder = finder
-      @entries = finder.find(file_path)
+      @entries = finder.find_entries(file_path)
     end
   end
 end

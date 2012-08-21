@@ -4,7 +4,7 @@ describe Rdayone::Journal do
   describe "loading" do
     let(:finder) do
       f = double("finder")
-      f.stub(:find) { [double("entry")] }
+      f.stub(:find_entries) { [double("entry")] }
       f
     end
 
@@ -19,7 +19,7 @@ describe Rdayone::Journal do
     end
 
     it "uses an entry finder" do
-      finder.should_receive(:find).with("some_path")
+      finder.should_receive(:find_entries).with("some_path")
       subject
     end
   end
