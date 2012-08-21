@@ -23,10 +23,21 @@ describe Rdayone::Entry do
   context "basic parsing" do
     let(:creation_date) { DateTime.new }
 
+    let(:hash) do
+      {
+        "Creation Date" => creation_date,
+        "Entry Text" => "something cool happened today",
+        "UUID" => "02B82925942747709E1DF0518A650E1B",
+        "Location" => {
+          "Latitude" => 51.505845,
+          "Longitude" => 0.1308377,
+          "Place Name" => "The Mall",
+          "Locality" => "London"
+        }
+      }
+    end
+
     subject do
-      hash = { "Creation Date" => creation_date,
-               "Entry Text" => "something cool happened today",
-               "UUID" => "02B82925942747709E1DF0518A650E1B"}
       Rdayone::Entry.new(hash)
     end
 
@@ -40,6 +51,13 @@ describe Rdayone::Entry do
 
     it "populates the creation date" do
       expect(subject.creation_date).to eq(creation_date)
+    end
+
+    context "location" do
+      it "returns a new location with the contents of the Location hash" do
+        Rdayone::Location.should_receive(:new).with(hash["Location"])
+        subject.location
+      end
     end
   end
 end

@@ -20,5 +20,9 @@ module Rdayone
         super
       end
     end
+
+    def location
+      Location.new(@plist_hash["Location"])
+    end
   end
 end
