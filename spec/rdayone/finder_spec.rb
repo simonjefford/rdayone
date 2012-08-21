@@ -17,4 +17,9 @@ describe Rdayone::Finder do
     photo = subject.find_photo_for("not_there")
     expect(photo).to be_nil
   end
+
+  it "passes itself into the new entry list" do
+    Rdayone::EntryList.should_receive(:new).with(kind_of(Array), subject)
+    subject.find_entries
+  end
 end

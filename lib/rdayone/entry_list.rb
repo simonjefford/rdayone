@@ -4,7 +4,7 @@ module Rdayone
   class EntryList
     include Enumerable
 
-    def initialize(entry_paths)
+    def initialize(entry_paths, finder)
       @entry_paths = entry_paths
       @entry_cache = {}
     end

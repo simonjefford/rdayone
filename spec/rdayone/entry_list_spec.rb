@@ -1,7 +1,9 @@
 require 'spec_helper'
 
 describe Rdayone::EntryList do
-  subject { Rdayone::EntryList.new(entry_fixture_paths) }
+  let(:finder) { double("finder") }
+
+  subject { Rdayone::EntryList.new(entry_fixture_paths, finder) }
 
   context "entry fetching" do
     it "returns the nth entry when used like an array" do

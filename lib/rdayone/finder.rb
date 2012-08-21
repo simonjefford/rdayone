@@ -7,7 +7,7 @@ module Rdayone
     end
 
     def find_entries
-      EntryList.new(Dir["#{@path}/entries/*.doentry"])
+      EntryList.new(Dir["#{@path}/entries/*.doentry"], self)
     end
 
     def find_photo_for(uuid)
