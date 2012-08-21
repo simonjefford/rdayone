@@ -19,7 +19,7 @@ describe Rdayone::Journal do
     end
 
     it "uses an entry finder" do
-      finder.should_receive(:find_entries).with("some_path")
+      finder.should_receive(:find_entries)
       subject
     end
   end

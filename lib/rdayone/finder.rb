@@ -1,7 +1,11 @@
 module Rdayone
   class Finder
-    def find_entries(path)
-      EntryList.new(Dir["#{path}/entries/*.doentry"])
+    def initialize(path)
+      @path = path
+    end
+
+    def find_entries
+      EntryList.new(Dir["#{@path}/entries/*.doentry"])
     end
   end
 end

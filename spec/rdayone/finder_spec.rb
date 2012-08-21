@@ -1,10 +1,10 @@
 require 'spec_helper'
 
 describe Rdayone::Finder do
-  subject { Rdayone::Finder.new }
+  subject { Rdayone::Finder.new('spec/fixtures') }
 
   it "finds all entries in the given directory" do
-    result = subject.find_entries('spec/fixtures')
+    result = subject.find_entries
     expect(result.count).to be > 0
   end
 end
