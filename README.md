@@ -29,8 +29,8 @@ journal.entries # An Enumerable array like object that contains all your entries
 
 ## NOTE
 
-This is a *very* early release. Entries currently contain the entry text
-and date only.
+This is a *very* early release. Entries currently contain the entry text, date and paths
+to related photos only.
 
 ## Contributing
 
