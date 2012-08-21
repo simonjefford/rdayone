@@ -21,7 +21,8 @@ describe Rdayone::EntryList do
     end
 
     it "uses the finder to pass in the full path to the photo" do
-      finder.should_receive(:find_photo_for).with("02B82925942747709E1DF0518A650E1B")
+      finder.stub(:uuid_from_path).and_return("uuid")
+      finder.should_receive(:find_photo_for).with("uuid")
       expect(subject[0].photo).to_not be_nil
     end
   end

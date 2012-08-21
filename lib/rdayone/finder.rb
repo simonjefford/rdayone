@@ -13,5 +13,9 @@ module Rdayone
     def find_photo_for(uuid)
       Dir["#{@path}/photos/#{uuid}.jpg"].map { |f| File.expand_path(f) }[0]
     end
+
+    def uuid_from_path(path)
+      File.basename(path, ".*")
+    end
   end
 end

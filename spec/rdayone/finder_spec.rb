@@ -22,4 +22,8 @@ describe Rdayone::Finder do
     Rdayone::EntryList.should_receive(:new).with(kind_of(Array), subject)
     subject.find_entries
   end
+
+  it "can extract a uuid from an entry path" do
+    expect(subject.uuid_from_path("spec/fixtures/entries/uuid.doentry")).to eq("uuid")
+  end
 end
