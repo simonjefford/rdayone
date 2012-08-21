@@ -1,6 +1,8 @@
 module Rdayone
   class Entry
-    attr_reader :photo
+    attr_reader :photo, :plist_hash, :attribute_mappings
+
+    include Rdayone::AttributeMappable
 
     def initialize(plist_hash = {}, photo = nil)
       @plist_hash = plist_hash
@@ -12,13 +14,8 @@ module Rdayone
       }
     end
 
-    def method_missing(method, *args)
-      key = @attribute_mappings[method]
-      if key
-        @plist_hash[key]
-      else
-        super
-      end
+    def location
+      Location.new(@plist_hash["Location"])
     end
   end
 end
