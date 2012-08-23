@@ -38,6 +38,18 @@ describe Rdayone::EntryList do
       mapresult = subject.map { |e| e.text }
       expect(mapresult[0]).to eq("Something cool happened in London")
     end
+
+    it "is sortable in ascending creation date order" do
+      sorted = subject.sort
+      expect(sorted[0].identifier).to eq("1A80AAD1BC71440891993A4637DBCB1E")
+      expect(sorted[1].identifier).to eq("02B82925942747709E1DF0518A650E1B")
+    end
+
+    it "is sortable in descending creation date order" do
+      sorted = subject.sort_desc
+      expect(sorted[0].identifier).to eq("02B82925942747709E1DF0518A650E1B")
+      expect(sorted[1].identifier).to eq("1A80AAD1BC71440891993A4637DBCB1E")
+    end
   end
 
   context "caching" do

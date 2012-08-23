@@ -24,6 +24,10 @@ module Rdayone
 
     alias :[] :fetch
 
+    def sort_desc
+      sort { |e1, e2| e2.creation_date <=> e1.creation_date }
+    end
+
     def each
       (0..@entry_paths.length - 1).each do |index|
         yield self.fetch(index)

@@ -14,6 +14,10 @@ module Rdayone
       }
     end
 
+    def <=>(other)
+      self.creation_date <=> other.creation_date
+    end
+
     def location
       Location.new(@plist_hash["Location"])
     end
