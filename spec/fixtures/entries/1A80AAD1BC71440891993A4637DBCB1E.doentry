@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Creation Date</key>
+	<date>2012-08-07T08:44:28Z</date>
+	<key>Entry Text</key>
+	<string>Took a wander around the Mall on the way to work. This is the back of Horse Guards</string>
+	<key>Location</key>
+	<dict>
+		<key>Administrative Area</key>
+		<string>England</string>
+		<key>Country</key>
+		<string>United Kingdom</string>
+		<key>Latitude</key>
+		<real>51.505845000000001</real>
+		<key>Locality</key>
+		<string>London</string>
+		<key>Longitude</key>
+		<real>-0.1308377</real>
+		<key>Place Name</key>
+		<string>The Mall</string>
+		<key>State</key>
+		<string>manual</string>
+	</dict>
+	<key>Starred</key>
+	<false/>
+	<key>UUID</key>
+	<string>1A80AAD1BC71440891993A4637DBCB1E</string>
+	<key>Weather</key>
+	<dict>
+		<key>Celsius</key>
+		<string>15</string>
+		<key>Description</key>
+		<string>Partly Cloudy</string>
+		<key>Fahrenheit</key>
+		<string>59</string>
+		<key>IconName</key>
+		<string>pcloudy.png</string>
+	</dict>
+</dict>
+</plist>

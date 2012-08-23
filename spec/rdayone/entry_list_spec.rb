@@ -31,12 +31,12 @@ describe Rdayone::EntryList do
     it "implements each" do
       entries = []
       subject.each { |e| entries << e }
-      expect(entries.count).to eq(1)
+      expect(entries.count).to eq(2)
     end
 
     it "is Enumerable" do
       mapresult = subject.map { |e| e.text }
-      expect(mapresult).to eq(["Something cool happened in London"])
+      expect(mapresult[0]).to eq("Something cool happened in London")
     end
   end
 
