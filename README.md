@@ -34,6 +34,10 @@ journal.entries # An Enumerable array like object that contains all your entries
 * Sorting of entry data (default is ascending date order - a method is
 supplied to sort by descending date order)
 
+## Supported rubies
+
+1.8.7, 1.9.2, rbx and jruby
+
 ## Contributing
 
 1. Fork it
