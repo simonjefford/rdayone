@@ -27,10 +27,12 @@ journal = Rdayone::Journal.new("/path/to/Journal.dayone")
 journal.entries # An Enumerable array like object that contains all your entries
 ```
 
-## NOTE
+## Supported features
 
-This is a *very* early release. Entries currently contain the entry text, date and paths
-to related photos only.
+* Basic entry data - text, creation date and the photo if one exists.
+* Entry location data
+* Sorting of entry data (default is ascending date order - a method is
+supplied to sort by descending date order)
 
 ## Contributing
 
