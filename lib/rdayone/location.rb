@@ -7,10 +7,10 @@ module Rdayone
     def initialize(plist_hash)
       @plist_hash = plist_hash
       @attribute_mappings = {
-        latitude: "Latitude",
-        longitude: "Longitude",
-        place_name: "Place Name",
-        locality: "Locality"
+        :latitude => "Latitude",
+        :longitude => "Longitude",
+        :place_name => "Place Name",
+        :locality => "Locality"
       }
     end
   end

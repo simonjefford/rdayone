@@ -1,4 +1,5 @@
-require_relative '../lib/rdayone'
+$:.unshift File.expand_path('../../lib', __FILE__)
+require 'rdayone'
 require 'rspec'
 
 def entry_fixture_paths

@@ -8,9 +8,9 @@ module Rdayone
       @plist_hash = plist_hash
       @photo = photo
       @attribute_mappings = {
-        text: "Entry Text",
-        creation_date: "Creation Date",
-        identifier: "UUID"
+        :text => "Entry Text",
+        :creation_date => "Creation Date",
+        :identifier => "UUID"
       }
     end
 
