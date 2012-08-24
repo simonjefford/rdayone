@@ -1,6 +1,17 @@
 require 'plist'
 
 module Rdayone
+  class Cache
+    def initialize
+      @cache_table = {}
+    end
+
+    def fetch(key)
+      return @cache_table[key] if @cache_table[key]
+      @cache_table[key] = yield
+    end
+  end
+
   class EntryList
     include Enumerable
 
@@ -8,18 +19,17 @@ module Rdayone
       @entry_paths = entry_paths
       @entry_cache = {}
       @finder = finder
+      @cache = Cache.new
     end
 
     def fetch(index)
       raise ArgumentError if index > @entry_paths.length
-      entry = @entry_cache[index]
-      unless entry
+
+      @cache.fetch(index) do
         uuid = @finder.uuid_from_path(@entry_paths[index])
         photo = @finder.find_photo_for(uuid)
-        entry = Rdayone::Entry.new(Plist::parse_xml(@entry_paths[index]), photo)
-        @entry_cache[index] = entry
+        Rdayone::Entry.new(Plist::parse_xml(@entry_paths[index]), photo)
       end
-      entry
     end
 
     alias :[] :fetch

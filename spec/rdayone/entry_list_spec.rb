@@ -54,9 +54,10 @@ describe Rdayone::EntryList do
 
   context "caching" do
     it "should cache entries for subsequent requests" do
-      list = subject.to_a
+      list = subject.to_a # fetch all the things
+      first_id = list[0].identifier
       Plist.stub(:parse_xml).and_raise("Entry was not cached")
-      subject[0]
+      expect(subject[0].identifier).to eq(first_id)
     end
   end
 end
